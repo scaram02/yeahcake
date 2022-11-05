@@ -2,8 +2,10 @@
 import './App.css';
 import React, {useState, useEffect} from 'react'
 import {Routes, Route, useRoutes, Redirect} from 'react-router-dom'
-import Login from './components/forms/Login'
+import Auth from './components/forms/Auth'
 import Home from './components/Home'
+import Feed from './components/Feed'
+import Cake from './components/forms/Cake'
 import {login} from './services/user';
 import { signup } from "./services/user";
 
@@ -23,27 +25,35 @@ const App = (props) => {
     },
     {
       path: '/signup',
-      element: <Login user={user} auth={signup}
-      setCurrentUser={setCurrentUser} {...props}/>
+      element: <Auth user={user} auth={signup}
+      setCurrentUser={setCurrentUser}  {...props}/>
     },
     {
       path: '/login',
-      element: <Login user={user} auth={login}
-      setCurrentUser={setCurrentUser} {...props}/>
+      element: <Auth 
+      user={user} 
+      auth={login}
+      setCurrentUser={setCurrentUser} 
+      {...props}/>
+    }
+   ])
+
+   const authedRoutes = useRoutes([
+    {
+      path: '/feed',
+      element: <Feed user={user.username}/>
+    },
+    {
+      path: '/rate',
+      element: <Cake user={user}/>
     }
    ])
 
   return (
     <div className="App">
-
      {routes}
-{/* <Routes>
-    <Route exact path="/signup"
-    render={props => <Signup {...props} 
-    user={user}
-    setCurrentUser={setCurrentUser} 
-    />} />
-</Routes> */}
+     {user && authedRoutes} 
+      {/* test this ^^^ */}
     </div>
   );
 }

@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import {signup} from '../../services/user'
 
-const Login = (props) => {
+const Auth = (props) => {
 
     const blankForm = {username: '', password: ''}
     const [user, setUser] = useState(blankForm)
     const [error, setError] = useState('')
 
+    const navigate = useNavigate()
 
     const handleInputChange = e => {
         const {name, value} = e.target;
@@ -22,7 +24,7 @@ const Login = (props) => {
                 console.log(error)
             } else {
                 props.setCurrentUser(data) //setCurrentUser ??? user
-                // props.history.push('/dashboard')
+                navigate('/feed')
                 console.log('success!')
             }
         })
@@ -39,4 +41,4 @@ const Login = (props) => {
     )
 }
 
-export default Login
+export default Auth
