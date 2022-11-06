@@ -1,30 +1,36 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import hm from '../configs/keys'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import keys from "../configs/keys";
 
 const CakeOfTheDay = () => {
-// const key = process.env.REACT_APP_FLICKR_KEY
-// const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY
+  const [cake, setCake] = useState(null);
 
-useEffect (() => {
-    console.log('here',hm.hm)
-  
-})
-const getPhoto = () => {
-var key = `${process.env.REACT_APP_FLICKR_KEY}`
-console.log(key)
-// axios.get(`https://api.unsplash.com/photos/random?client_id=${key}`)
+  useEffect(() => {
+    getPhotos();
+  }, []);
 
-fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_FLICKR_KEY}&tags=cake&format=json&nojsoncallback=1`)
-.then(res => res.json())
-.then((thePhoto) => console.log(thePhoto))
-}
+  const getPhotos = () => {
+    const randomPage = Math.floor(Math.random() * (25 - 1 + 1) + 1); // select from the first 25 pages of results
+    const randomCake = Math.floor(Math.random() * 10);
 
-    return (
-        <div>
-<button onClick={getPhoto}>click me</button>
-        </div>
-    )
-}
+    axios
+      .get(
+        `https://api.unsplash.com/search/photos/?query=cake&page=${randomPage}&client_id=${keys.UNSPLASH_KEY}`
+      )
+      .then((theCakes) => setCake(theCakes.data.results[randomCake]));
+  };
 
-export default CakeOfTheDay
+  return (
+    <div>
+      {cake && (
+        <img
+          src={cake.urls.full}
+          alt={cake.alt_description}
+          style={{ height: "300px" }}
+        />
+      )}
+    </div>
+  );
+};
+
+export default CakeOfTheDay;
