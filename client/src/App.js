@@ -5,7 +5,7 @@ import {Routes, Route, useRoutes, Redirect} from 'react-router-dom'
 import Auth from './components/forms/Auth'
 import Home from './components/Home'
 import Feed from './components/Feed'
-import Cake from './components/forms/Cake'
+import CakeForm from './components/forms/CakeForm'
 import {login} from './services/user';
 import { signup } from "./services/user";
 
@@ -45,7 +45,7 @@ const App = (props) => {
     },
     {
       path: '/rate',
-      element: <Cake user={user}/>
+      element: <CakeForm user={user}/>
     }
    ])
 
