@@ -6,7 +6,6 @@ export const openQuestions = [
 ]
 
 
-// need to match this with models
 export const ratedQuestions = [
     "How was the presentation?", // appearance too?
     "How was the texture?",

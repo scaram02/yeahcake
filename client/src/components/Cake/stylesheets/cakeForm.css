@@ -1,0 +1,16 @@
+.formContainer {
+    background: gray;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+}
+
+
+.questions input[type=text] {
+    /* background: blue; */
+    height: 25vh;
+}

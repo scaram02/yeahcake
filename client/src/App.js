@@ -2,10 +2,10 @@
 import './App.css';
 import React, {useState, useEffect} from 'react'
 import {Routes, Route, useRoutes, Redirect} from 'react-router-dom'
-import Auth from './components/forms/Auth'
+import Auth from './components/Auth/forms/Auth'
 import Home from './components/Home'
 import Feed from './components/Feed'
-import CakeForm from './components/forms/CakeForm'
+import CakeForm from './components/Cake/forms/CakeForm'
 import {login} from './services/user';
 import { signup } from "./services/user";
 
