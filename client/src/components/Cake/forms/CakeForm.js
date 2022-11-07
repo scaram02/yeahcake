@@ -42,6 +42,7 @@ const CakeForm = ({user}) => {
             {count < 7? <button onClick={countUp}>Next</button> : <button onClick={handleSubmit}>submit</button>}
         <Link to="/feed">Back</Link>
         </div>
+
         </div>
     )
 }
