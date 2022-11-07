@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import CakeCard from './CakeCard'
-
+import './stylesheets/cakeCard.css'
 
 
 const CakeList = ({}) => {
@@ -20,10 +20,10 @@ const CakeList = ({}) => {
     }
 
     return (
-        <div>
+        <div className="list-container">
             {cakes.length > 0 ? (
                 cakes.map((cake) => (
-               <div key={cake._id}>
+               <div className="card-container" key={cake._id}>
                 <CakeCard cake={cake}/>
                </div>
                 )

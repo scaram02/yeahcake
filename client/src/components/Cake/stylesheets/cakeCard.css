@@ -1,0 +1,12 @@
+.list-container {
+display: flex;
+flex-wrap: wrap;
+/* justify-content: center; */
+}
+
+.card-container {
+    border: 1px solid gray;
+    width: 300px;
+    margin: 10px auto;
+    border-radius: 4px;
+}

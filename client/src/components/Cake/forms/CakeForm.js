@@ -40,7 +40,7 @@ const CakeForm = ({user}) => {
             <CakeQuestion count={count} />
             <CakeInput count={count} cake={cake} setCake={setCake} user={user}/> 
             {count < 7? <button onClick={countUp}>Next</button> : <button onClick={handleSubmit}>submit</button>}
-        <Link to="/feed">Back</Link>
+            <Link to="/feed">Back</Link>
         </div>
 
         </div>

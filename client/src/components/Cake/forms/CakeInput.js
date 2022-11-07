@@ -12,7 +12,7 @@ const CakeInput = ({user, cake, setCake, count}) => {
         const {name, value} = e.target;
         setCake({...cake, [name]: value})
     }
-
+// https://react-bootstrap.github.io/components/progress/
     return (
         <div className="questions">
             {count < 4? 
