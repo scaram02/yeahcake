@@ -19,8 +19,7 @@ const CakeForm = ({user}) => {
         // clears text on text forms
         setCake({...cake, loc: ''})
     }
-
-
+    
 
     const handleSubmit = ({user}) => {
     
@@ -36,14 +35,15 @@ const CakeForm = ({user}) => {
 
     return (
         <div>
+             <Link to="/feed" className="cancel">x</Link>
             <MenuContainer user={user}/>
         <div className="formContainer">    
-<div>
+            <div>
             <CakeQuestion count={count} />
             <CakeInput count={count} cake={cake} setCake={setCake} user={user}/> 
             {count < 7? <button onClick={countUp}>Next</button> : <button onClick={handleSubmit}>submit</button>}
-            <Link to="/feed">Cancel</Link>
-        </div>
+            
+       </div>
         </div>
         </div>
     )

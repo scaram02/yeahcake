@@ -6,10 +6,15 @@ const CakeText = ({shortName, handleChange, cake}) => {
 
 
     
-//     const [text, setText] = useState({cafe: '', city: "", country: '', notes: ""})
-// console.log('hsort noa', shortName)
     return (
-        <input type="text" name={shortName} value={cake[shortName]} onChange={handleChange}/>
+       <div>
+        <input 
+       type="text" 
+       name={shortName} 
+       value={cake[shortName]} 
+       onChange={handleChange}
+       spellCheck="false"/>
+       </div>
     )
 }
 
