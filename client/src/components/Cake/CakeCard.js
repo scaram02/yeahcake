@@ -27,14 +27,13 @@ const cakes = [...Array(cakeRepeats)]
         >
           {isHovered? 
           <div className="text-contain">
-            <p></p>
           <p>{notes}</p>
           </div> :
            <div className="text-contain">
             <h1>{cafe} in {city}, {country}</h1>
           <p>rating: {rate}</p>  
-       {cakes.map(() => {
-        return <img src={cakeVector} style={{height: '30px'}}/>
+       {cakes.map((c, i) => {
+        return <img key={i} src={cakeVector} style={{height: '30px'}}/>
        })}
 
          </div>}

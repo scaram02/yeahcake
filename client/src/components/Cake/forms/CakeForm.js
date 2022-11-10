@@ -4,7 +4,7 @@ import CakeInput from './CakeInput'
 import CakeQuestion from './CakeQuestion'
 import {useNavigate, Link} from 'react-router-dom'
 import '../stylesheets/cakeForm.css'
-
+import MenuContainer from '../../Menu/MenuContainer'
 const CakeForm = ({user}) => {
 
     const [count, setCount] = useState(0) 
@@ -22,7 +22,7 @@ const CakeForm = ({user}) => {
 
 
 
-    const handleSubmit = () => {
+    const handleSubmit = ({user}) => {
     
     const {cafe, city, country, notes, presentation, texture, price, taste} = cake
         axios.post('/api/cake', {
@@ -35,14 +35,16 @@ const CakeForm = ({user}) => {
     }
 
     return (
-        <div className="formContainer">
+        <div>
+            <MenuContainer user={user}/>
+        <div className="formContainer">    
 <div>
             <CakeQuestion count={count} />
             <CakeInput count={count} cake={cake} setCake={setCake} user={user}/> 
             {count < 7? <button onClick={countUp}>Next</button> : <button onClick={handleSubmit}>submit</button>}
-            <Link to="/feed">Back</Link>
+            <Link to="/feed">Cancel</Link>
         </div>
-
+        </div>
         </div>
     )
 }
