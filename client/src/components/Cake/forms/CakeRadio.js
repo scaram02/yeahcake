@@ -4,7 +4,7 @@ import {options} from '../../../data/questions'
 const CakeRadio = ({shortName, handleChange}) => {
 
     return (
-        <div className="hm">
+        <div className="radio-container">
        {options.map((digit) => (
                 <label key={digit}>
                 <input type='radio' 

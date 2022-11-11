@@ -10,10 +10,6 @@ const MenuContainer = ({user}) => {
 // https://www.npmjs.com/package/react-burger-menu
 
 
-    const showSettings = e => {
-        e.preventDefault();
-    }
-
     const handleLogout = () => {
         logout();
         clearUser(null)
