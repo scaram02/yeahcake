@@ -64,13 +64,18 @@
     text-decoration: none;
     color: #c94e50;
   }
+/* styles for links not h1 */
+  #rate, #home, #my-cakes, #logout {
+      padding-top: 20px;
+    }
 
+ 
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
 
   .active {
-    color: #f9fafb;
-    font-weight: bold;
+    color: #a90000;
+    font-weight: bolder;
   }
