@@ -3,9 +3,9 @@ import { shortIds } from '../../../data/questions'
 import CakeText from './CakeText'
 import CakeRadio from './CakeRadio'
 
-const CakeInput = ({user, cake, setCake, count}) => {
+const CakeInput = ({user, cake, setCake, count, highlighted, setHighlighted}) => {
 
-  
+
     const shortName = shortIds[count]
 
     const handleChange = e => {
@@ -13,12 +13,20 @@ const CakeInput = ({user, cake, setCake, count}) => {
         setCake({...cake, [name]: value})
     }
 // https://react-bootstrap.github.io/components/progress/
-    return (
+    console.log(`do you wanna add a progress bar? Click here https://react-bootstrap.github.io/components/progress/`)
+
+return (
         <div className="questions">
             {count < 4? 
-            <CakeText cake={cake} shortName={shortName} handleChange={handleChange}/>
+            <CakeText cake={cake} 
+            shortName={shortName} 
+            handleChange={handleChange}/>
              : 
-             <CakeRadio shortName={shortName} handleChange={handleChange}/>
+             <CakeRadio 
+             shortName={shortName} 
+             handleChange={handleChange} 
+             highlighted={highlighted} 
+             setHighlighted={setHighlighted}/>
          }
         </div>
     )

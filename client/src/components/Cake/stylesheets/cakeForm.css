@@ -5,11 +5,13 @@
     flex-direction: column;
     align-items: center;
 }
+/* 
+.questions {
+    border: 2px solid yellow;
+} */
 
 .cancel {
-    position: absolute;
-    right: 9vw;
-    top: 17rem;
+    float: right;
     text-decoration: none;
     font-weight: bold;
     color: #373a47;
@@ -41,13 +43,11 @@
 
 .questions input[type=text] {
     height: 25vh;
-    width: 80vw;
+    width: 98%;
     font-size: 3.5rem;
     text-align: center;
     border: none;
-    margin: .2em;
     text-align: left;
-    padding-left: 1em;
     color: #c94e50;
     border-radius: 4px;
 }
@@ -61,18 +61,11 @@
     height: 0px;
 }
 
-
-
-/* .questions input[type="radio"]:checked+label {
-background-color: blue;
-} */
-
-
 .radio-container {
     padding-top: .5em;;
     display: flex;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 100%;
     align-items: center;
     justify-content: center;
     /* border: 2px solid green; */
@@ -90,9 +83,8 @@ button {
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 4px;
-    position: absolute;
-    right: 8vw;
-    margin-top: 15px;
+    margin: 1em 0;
+    float: right;
   
 }
 
@@ -107,20 +99,17 @@ button:hover {
         padding: 1em 5em;
 } 
 
-    /* .hm {
-        flex-wrap: wrap;
-     }
-      */
      .radio-container {
         flex-direction: column;
      }
   }  
 
 
-
 /* mobile */
 @media only screen and (max-width: 480px) { 
-   
+   .sub-container {
+    margin-top: 3em;
+   }
    
     .questions input[type=text] {
         font-size: 1.4rem;
@@ -135,7 +124,7 @@ button:hover {
 
      .questions label {
         margin: 5px;
-        padding: .5em .8m;
+        padding: .4em 3.5em;
      }
 
      h1 {
@@ -146,10 +135,6 @@ button:hover {
      .cancel {
         top: 1.7rem;
         margin-top: 0;
-     }
-
-     button {
-        right: 25px;
      }
      
 }
