@@ -8,17 +8,9 @@ import MenuContainer from './Menu/MenuContainer'
 const Feed = ({user}) => {
 
 
-    // const handleLogout = () => {
-    //     logout();
-    //     clearUser(null)
-    // }
-
     return (
         <div>
             <MenuContainer user={user}/>
-            {/* welcome, {user} */}
-         {/* <Link to="/rate" >rate a cake</Link> */}
-        {/* <Link to="/" onClick={handleLogout}>log out</Link> */}
         <CakeOfTheDay/>
         <CakeList/>
             </div>

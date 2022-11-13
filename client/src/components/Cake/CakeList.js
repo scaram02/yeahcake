@@ -28,7 +28,7 @@ const CakeList = ({}) => {
                </div>
                 )
             )
-            ) :  <h1>no</h1>}
+            ) :  <h1>Loading</h1>}
         </div>
     )
 }
