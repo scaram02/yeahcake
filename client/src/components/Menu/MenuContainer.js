@@ -14,7 +14,7 @@ const MenuContainer = ({user}) => {
         logout();
         clearUser(null)
     }
-
+console.log(' im the suer', user)
     return (
         <Menu>
             <h1>Welcome, {user}</h1>

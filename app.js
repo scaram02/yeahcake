@@ -99,6 +99,9 @@ app.use("/api/cake", cakeRoutes);
 
 
 
+// const selfCakeRoutes = require("./routes/cake/mine")
+// app.use("/api/cake/mine", selfCakeRoutes)
+
 
 app.use((req, res) => {
   // If no routes match, send them the React HTML.

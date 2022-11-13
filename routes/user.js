@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
-
+// const axios = require('axios')
 
 router.post("/signup", (req, res) => {
     const { username, password} = req.body;

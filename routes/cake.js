@@ -21,6 +21,21 @@ router.post('/', (req, res) => {
 })
 
 
+
+
+// get all the cake that belongs to the user!
+router.get('/:id', (req, res) => {
+    const id = req.params.id
+          Cake.find({user: id})
+          .populate('user')
+          .then(cakes => {
+              res.json(cakes)
+          })
+          .catch(err => {
+              console.log(err)
+          })
+      })
+
 // view  all cakes
 router.get('/', (req, res) => {
     Cake.find()
@@ -29,6 +44,10 @@ router.get('/', (req, res) => {
         res.json(cake)
     })
 })
+
+
+
+
 
   
 module.exports = router;
