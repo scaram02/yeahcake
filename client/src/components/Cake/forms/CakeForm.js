@@ -8,7 +8,7 @@ import MenuContainer from '../../Menu/MenuContainer'
 const CakeForm = ({user}) => {
 
     const [count, setCount] = useState(0) 
-    const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: "", texture: '', price: '', taste: ''})
+    const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: null, texture: null, price: null, taste: null})
     const loc = cake[count]
     const [highlighted, setHighlighted] = useState(null)
 
@@ -27,7 +27,7 @@ const CakeForm = ({user}) => {
         setCount(count-1)
         
     }
-
+console.log('-----------',cake)
 
     const handleSubmit = ({user}) => {
     

@@ -49,10 +49,12 @@ const App = (props) => {
       element: <CakeForm user={user.username}/>
     },
     {
-      path: '/my-cakes',
+      path: '/my-cakes/:username',
       element: <MyCakes user={user}/>
     }
    ])
+
+
 
   return (
     <div className="App">

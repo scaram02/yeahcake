@@ -7,7 +7,6 @@ export const openQuestions = [
 
 
 export const ratedQuestions = [
-    "Say something about your cake",
     "How was the presentation?", // appearance too?
     "How was the texture?",
     "Was this worth the price?",

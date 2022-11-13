@@ -15,13 +15,12 @@ const MenuContainer = ({user}) => {
         clearUser(null)
     }
 
-// should be LI? 
     return (
         <Menu>
             <h1>Welcome, {user}</h1>
         <NavLink id="home" activeClassName="active" className="menu-item" to="/feed">Home</NavLink>
         <NavLink id="rate" className="menu-item" activeClassName="active" to="/rate">Rate a cake!</NavLink>
-        <NavLink id="my-cakes"  className="menu-item" activeClassName="active" to="/my-cakes">My cakes</NavLink>
+        <NavLink id="my-cakes"  className="menu-item" activeClassName="active" to={`/my-cakes/${user}`}>My cakes</NavLink>
         <NavLink id="logout" onClick={handleLogout} className="menu-item" activeClassName="active" to="/">Log out</NavLink>
       </Menu>
     )
