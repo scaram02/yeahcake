@@ -7,7 +7,7 @@ const CakeCard = ({cake}) => {
   const [isHovered, setIsHovered] = useState(false)
 
 
-const {cafe, city, country, price, texture, taste, presentation, notes} = cake
+const {cafe, city, country, price, texture, taste, presentation, notes, imageUrl} = cake
 
 const rate = calcAveRating(price, texture, taste, presentation)
 
@@ -31,6 +31,7 @@ const cakes = [...Array(cakeRepeats)]
           </div> :
            <div className="text-contain">
             <h1>{cafe} in {city}, {country}</h1>
+            {imageUrl && <img src={imageUrl} style={{height: '100px'}}/>}
           <p>rating: {rate}</p>  
        {cakes.map((c, i) => {
         return <img key={i} src={cakeVector} style={{height: '30px'}}/>

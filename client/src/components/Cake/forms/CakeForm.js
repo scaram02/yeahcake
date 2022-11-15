@@ -5,10 +5,13 @@ import CakeQuestion from './CakeQuestion'
 import {useNavigate, Link} from 'react-router-dom'
 import '../stylesheets/cakeForm.css'
 import MenuContainer from '../../Menu/MenuContainer'
+import UploadPhoto from './UploadPhoto'
+
+
 const CakeForm = ({user}) => {
 
     const [count, setCount] = useState(0) 
-    const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: null, texture: null, price: null, taste: null})
+    const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: null, texture: null, price: null, taste: null, imageUrl: ""})
     const loc = cake[count]
     const [highlighted, setHighlighted] = useState(null)
 
@@ -31,11 +34,12 @@ console.log('-----------',cake)
 
     const handleSubmit = ({user}) => {
     
-    const {cafe, city, country, notes, presentation, texture, price, taste} = cake
+    const {cafe, city, country, notes, presentation, texture, price, taste, imageUrl} = cake
         axios.post('/api/cake', {
-           cafe, city, country, notes, presentation, texture, price, taste, 
+           cafe, city, country, notes, presentation, texture, price, taste, imageUrl,
             user: user
         })
+        .then(res => console.log('asdfadf res.dat', res.data))
         .then(() => navigate('/feed'))
         .catch(err => console.log(err))
 
@@ -50,14 +54,18 @@ console.log('-----------',cake)
             <div className="sub-container">
             <Link to="/feed" className="cancel">x</Link>
             <CakeQuestion count={count} />
-            <CakeInput 
+            {count < 7? <CakeInput 
             count={count} 
             cake={cake} 
             setCake={setCake} 
             user={user} 
             highlighted={highlighted} 
             setHighlighted={setHighlighted}/> 
-            
+            :     
+              <UploadPhoto  cake={cake} 
+            setCake={setCake} /> 
+            // <h1>put the uploadphoto comp here</h1>
+            }
             {count < 7? <button onClick={countUp}>Next</button> : 
             <button onClick={handleSubmit}>Submit</button>}
             <h1 onClick={countDown}>down</h1>

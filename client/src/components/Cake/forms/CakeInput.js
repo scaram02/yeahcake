@@ -3,6 +3,7 @@ import { shortIds } from '../../../data/questions'
 import CakeText from './CakeText'
 import CakeRadio from './CakeRadio'
 
+
 const CakeInput = ({user, cake, setCake, count, highlighted, setHighlighted}) => {
 
 
@@ -27,6 +28,7 @@ return (
              handleChange={handleChange} 
              highlighted={highlighted} 
              setHighlighted={setHighlighted}/>
+
          }
         </div>
     )
