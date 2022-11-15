@@ -10,6 +10,7 @@ const cakeSchema = new Schema({
     taste: Number,
     texture: Number,
     price: Number,
+    imageUrl: String,
 user: 
 {
     type: Schema.Types.ObjectId,

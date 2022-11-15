@@ -77,6 +77,11 @@ app.use(
   })
 );
 
+// set photo upload higher???? nov 22
+app.use(express.json({
+  limit: '50mb'
+}));
+
 // USE passport.initialize() and passport.session() HERE:
 
 app.use(passport.initialize());

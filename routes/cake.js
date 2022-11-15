@@ -2,13 +2,20 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const Cake = require('../models/Cake')
+const {cloudinary} = require('../utils/cloudinary.js')
+
 
 // rate a new cake
-router.post('/', (req, res) => {
-    const {cafe, city, country, notes, presentation, taste, texture, price} = req.body
-
-    Cake.create({
-        cafe, city, country, notes, presentation, taste, texture, price,
+router.post('/', async (req, res, next) => {
+    const {cafe, city, country, notes, presentation, taste, texture, price, imageUrl} = req.body
+    const uploadResponse = await cloudinary.uploader.upload(imageUrl, {
+        upload_preset: 'ml_default' // set folder name/presets on Cloudinary
+    }).catch(err => { 
+        res.json(err) 
+    })
+    .then(uploadResponse => {
+        Cake.create({
+        cafe, city, country, notes, presentation, taste, texture, price, imageUrl: uploadResponse.secure_url,
         user: [req.user._id]
     })
     .then(
@@ -17,8 +24,9 @@ router.post('/', (req, res) => {
             res.json(cake)
         }
     )
-    .catch(err => { res.json(err) })
-})
+})  
+.catch(err => { res.json(err) })
+    })
 
 
 

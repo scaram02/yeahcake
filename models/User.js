@@ -4,12 +4,6 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     username: String,
     password: String, 
-    cakes: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Cake"
-      }
-    ]
 },
   {
     timestamps: true

@@ -26,12 +26,6 @@ const CakeForm = ({user}) => {
     }
 
 
-    const countDown = () => {
-        setCount(count-1)
-        
-    }
-console.log('-----------',cake)
-
     const handleSubmit = ({user}) => {
     
     const {cafe, city, country, notes, presentation, texture, price, taste, imageUrl} = cake
@@ -64,11 +58,9 @@ console.log('-----------',cake)
             :     
               <UploadPhoto  cake={cake} 
             setCake={setCake} /> 
-            // <h1>put the uploadphoto comp here</h1>
             }
             {count < 7? <button onClick={countUp}>Next</button> : 
             <button onClick={handleSubmit}>Submit</button>}
-            <h1 onClick={countDown}>down</h1>
        </div>
         </div>
         </div>
