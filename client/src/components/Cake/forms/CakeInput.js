@@ -12,11 +12,14 @@ const CakeInput = ({user, cake, setCake, count, highlighted, setHighlighted}) =>
     const handleChange = e => {
         const {name, value} = e.target;
         setCake({...cake, [name]: value})
+        setHighlighted(value)
     }
+
 // https://react-bootstrap.github.io/components/progress/
     console.log(`do you wanna add a progress bar? Click here https://react-bootstrap.github.io/components/progress/`)
 
-return (
+
+    return (
         <div className="questions">
             {count < 4? 
             <CakeText cake={cake} 
@@ -26,8 +29,7 @@ return (
              <CakeRadio 
              shortName={shortName} 
              handleChange={handleChange} 
-             highlighted={highlighted} 
-             setHighlighted={setHighlighted}/>
+             highlighted={highlighted} />
 
          }
         </div>

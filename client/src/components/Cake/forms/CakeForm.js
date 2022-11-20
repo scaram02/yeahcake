@@ -53,8 +53,9 @@ const CakeForm = ({user}) => {
             cake={cake} 
             setCake={setCake} 
             user={user} 
-            highlighted={highlighted} 
-            setHighlighted={setHighlighted}/> 
+            highlighted={highlighted}
+            setHighlighted={setHighlighted}
+           /> 
             :     
               <UploadPhoto submitVisible={submitVisible} setSubmitVisible={setSubmitVisible} cake={cake} 
             setCake={setCake} /> 

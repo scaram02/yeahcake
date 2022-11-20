@@ -38,6 +38,7 @@ const handleSubmit = e => {
 
     return (
         <div className="upload-photo">
+            <h1>Upload an image</h1>
            <input className="choose-file" type="file" onChange={handleFileChange} value={fileInput} accept="image/*"/> 
            {previewSource && <img src={previewSource} alt="image preview"/>}
            {previewSource && <button className="upload" type='submit' onClick={handleSubmit}>Upload</button>}
