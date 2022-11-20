@@ -25,9 +25,6 @@ const previewFile = file => {
 }
 
 
-
-
-
 const handleSubmit = e => {
     e.preventDefault()
 

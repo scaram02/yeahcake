@@ -10,7 +10,7 @@ import UploadPhoto from './UploadPhoto'
 
 const CakeForm = ({user}) => {
 
-    const [count, setCount] = useState(0) 
+    const [count, setCount] = useState(7) 
     const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: null, texture: null, price: null, taste: null, imageUrl: ""})
     const loc = cake[count]
     const [highlighted, setHighlighted] = useState(null)

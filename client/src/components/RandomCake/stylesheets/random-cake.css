@@ -1,0 +1,12 @@
+.random-cake {
+    height: 450px;
+    margin: 20px;
+}
+
+
+/* mobile */
+@media only screen and (max-width: 480px) { 
+    .random-cake {
+        height: 275px;
+    }
+}

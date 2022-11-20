@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import keys from "../configs/keys";
+import keys from "../../configs/keys";
+import '../RandomCake/stylesheets/random-cake.css'
 
 const CakeOfTheDay = () => {
   const [cake, setCake] = useState(null);
@@ -26,7 +27,7 @@ const CakeOfTheDay = () => {
         <img
           src={cake.urls.full}
           alt={cake.alt_description}
-          style={{ height: "300px" }}
+          className="random-cake"
         />
       )}
     </div>
