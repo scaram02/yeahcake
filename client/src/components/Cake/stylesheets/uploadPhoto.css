@@ -1,0 +1,33 @@
+.upload-photo {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-photo input {
+box-shadow: none 
+}
+
+
+.upload{
+    margin-bottom: 20px;
+    border: 4px solid #373a47;
+    color: #373a47;
+    background: white;
+}
+
+.upload:hover {
+    background: #373a47;
+    color: white;
+}
+
+.upload-photo img {
+    height: 8em;
+    width: fit-content;
+}
+
+/* ~~~~~mobile~~~~~~ */
+@media only screen and (max-width: 480px) { 
+.upload-photo input {
+    width: 300px;
+}
+}

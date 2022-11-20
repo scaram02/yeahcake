@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import '../stylesheets/uploadPhoto.css'
 
-const UploadPhoto = ({cake, setCake}) => {
+const UploadPhoto = ({cake, setCake, submitVisible, setSubmitVisible}) => {
 
 
 const [fileInput, setFileInput] = useState('')
@@ -21,6 +22,7 @@ const previewFile = file => {
     reader.readAsDataURL(file) 
     reader.onloadend = () => {
         setPreviewSource(reader.result)
+      
     } 
 }
 
@@ -30,14 +32,16 @@ const handleSubmit = e => {
 
     if (!previewSource) return;
     setCake({...cake, imageUrl: previewSource})
+    setSubmitVisible(!submitVisible)
 }
 
 
     return (
-        <div>
+        <div className="upload-photo">
            <input className="choose-file" type="file" onChange={handleFileChange} value={fileInput} accept="image/*"/> 
-           <button className="upload" type='submit' onClick={handleSubmit}>Upload</button>
-           {previewSource && <img src={previewSource} alt="image preview" style={{height: "150px"}}/>}
+           {previewSource && <img src={previewSource} alt="image preview"/>}
+           {previewSource && <button className="upload" type='submit' onClick={handleSubmit}>Upload</button>}
+          
         </div>
     )
 }
