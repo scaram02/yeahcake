@@ -4,13 +4,13 @@ import CakeCard from './CakeCard'
 import './stylesheets/cakeCard.css'
 
 
-const CakeList = ({}) => {
+const CakeList = ({cakes, setCakes}) => {
 
-    const [cakes, setCakes] = useState([])
+
 
     useEffect(() => {
      getCake()
-    }, [cakes.length])
+    }, [])
 
     const getCake = () => {
         axios
@@ -21,6 +21,7 @@ const CakeList = ({}) => {
 
     return (
         <div className="list-container">
+           
             {cakes.length > 0 ? (
                 cakes.map((cake) => (
                <div className="card-container" key={cake._id}>

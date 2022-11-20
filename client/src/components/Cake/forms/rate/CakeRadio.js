@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {options} from '../../../data/questions'
+import {options} from '../../../../data/questions'
 
 const CakeRadio = ({shortName, handleChange, highlighted}) => {
 

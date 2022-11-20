@@ -1,0 +1,23 @@
+.sort-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    background: white;
+    height: 40px;
+    width: 150px;
+    color: #c94e50;
+    border: 2px solid #c94e50;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+select:focus {
+   outline: none;
+}

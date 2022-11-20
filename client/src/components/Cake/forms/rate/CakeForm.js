@@ -3,9 +3,9 @@ import axios from 'axios'
 import CakeInput from './CakeInput'
 import CakeQuestion from './CakeQuestion'
 import {useNavigate, Link} from 'react-router-dom'
-import '../stylesheets/cakeForm.css'
-import MenuContainer from '../../Menu/MenuContainer'
-import UploadPhoto from './UploadPhoto'
+import '../../stylesheets/cakeForm.css'
+import MenuContainer from '../../../Menu/MenuContainer'
+import UploadPhoto from '../UploadPhoto'
 
 
 const CakeForm = ({user}) => {

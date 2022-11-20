@@ -1,5 +1,5 @@
 import React from 'react'
-import { shortIds } from '../../../data/questions'
+import { shortIds } from '../../../../data/questions'
 import CakeText from './CakeText'
 import CakeRadio from './CakeRadio'
 

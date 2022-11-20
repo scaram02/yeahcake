@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import {useRoutes} from 'react-router-dom'
 import Home from './components/Home'
 import Feed from './components/Feed'
-import CakeForm from './components/Cake/forms/CakeForm'
+import CakeForm from './components/Cake/forms/rate/CakeForm'
 import MyCakes from './components/Cake/MyCakes';
 
 
