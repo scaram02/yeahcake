@@ -10,6 +10,8 @@ export const ratedQuestions = [
     "How was the presentation?", // appearance too?
     "How was the texture?",
     "Was this worth the price?",
+    "How was the flavor combination?",
+    "How was the originality of this cake?",
     "How was the overall taste?"
 
 ]
@@ -23,5 +25,5 @@ export const options = [
 ]
 
 export const shortIds = [
-   "cafe", "city", "country", "notes", "presentation", "texture", "price", 'taste'
+   "cafe", "city", "country", "notes", "presentation", "texture", "price", 'combination', 'originality', 'taste'
 ]

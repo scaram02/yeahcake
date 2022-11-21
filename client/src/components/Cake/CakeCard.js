@@ -7,9 +7,9 @@ const CakeCard = ({cake}) => {
   const [isHovered, setIsHovered] = useState(false)
 
 
-const {cafe, city, country, price, texture, taste, presentation, notes, imageUrl} = cake
+const {cafe, city, country, price, texture, taste, presentation, combination, originality, notes, imageUrl} = cake
 
-const rate = calcAveRating(price, texture, taste, presentation)
+const rate = calcAveRating(price, texture, taste, presentation, combination, originality)
 
 // set cake price worthiness icons
 const cakeRepeats = priceWorthMultiplier(price)

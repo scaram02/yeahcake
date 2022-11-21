@@ -11,7 +11,7 @@ import UploadPhoto from '../UploadPhoto'
 const CakeForm = ({user}) => {
 
     const [count, setCount] = useState(0) 
-    const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: null, texture: null, price: null, taste: null, imageUrl: ""})
+    const [cake, setCake] = useState({cafe: "", city: "", country: '', notes: '', presentation: null, texture: null, price: null, combination: null, originality: null, taste: null, imageUrl: ""})
     const loc = cake[count]
     const [highlighted, setHighlighted] = useState(null)
     const [submitVisible, setSubmitVisible] = useState(false)
@@ -29,9 +29,9 @@ const CakeForm = ({user}) => {
 
     const handleSubmit = ({user}) => {
     
-    const {cafe, city, country, notes, presentation, texture, price, taste, imageUrl} = cake
+    const {cafe, city, country, notes, presentation, texture, price, combination, originality, taste, imageUrl} = cake
         axios.post('/api/cake', {
-           cafe, city, country, notes, presentation, texture, price, taste, imageUrl,
+           cafe, city, country, notes, presentation, texture, price, combination, originality, taste, imageUrl,
             user: user
         })
         .then(() => navigate('/feed'))
@@ -48,7 +48,7 @@ const CakeForm = ({user}) => {
             <div className="sub-container">
             <Link to="/feed" className="cancel">x</Link>
             <CakeQuestion count={count} />
-            {count < 8? <CakeInput 
+            {count < 10? <CakeInput 
             count={count} 
             cake={cake} 
             setCake={setCake} 
@@ -60,7 +60,7 @@ const CakeForm = ({user}) => {
               <UploadPhoto submitVisible={submitVisible} setSubmitVisible={setSubmitVisible} cake={cake} 
             setCake={setCake} /> 
             }
-            {count < 8 &&  <button onClick={countUp}>Next</button>} 
+            {count < 10 &&  <button onClick={countUp}>Next</button>} 
             {submitVisible && <button onClick={handleSubmit}>Submit</button>}
        </div>
         </div>
